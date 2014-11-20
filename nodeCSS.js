@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
-var port = 4831;
-var fileName = 'nodeTest.html';
+var port = 4832;
+var fileName = 'nodeTest2.html';
 var count = 0;
 
 http.createServer(function(request,res) {

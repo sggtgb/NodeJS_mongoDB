@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Node HTML test</title>
+		<style>
+			li {
+				font-family: "Arial";
+				font-size: 18px;
+				color: #800800;
+			}
+
+			.party {
+				height:500px;
+				width:500px;
+			}
+		</style>
+	</head>
+	<body>
+		<p> testing 1 2 3 testing </p>
+		<h4>Here, have some buttons</h4>
+		<button onclick="clickie()">Click Me!</button>
+		<br>
+		<button onclick="backgroundStrange()">Random Background color?</button>
+		<br>
+		<button onclick="seizures()">Don't Click Me!(really though.  Seizure warning)</button>
+		<div class="party"></div>
+		<ul>
+			<li>And</li>
+			<li>a</li>
+			<ul>
+				<li>list</li>
+			</ul>
+		</ul>
+		<script>
+                        function clickie() {
+                                alert("So inline works.  But it almost certainly wont work with external stylesheets doing this the way i am");
+                        }
+	
+			function backgroundStrange()
+			{
+				var color = Math.floor(Math.random()*1000000);
+				if(color < 100000) color += 100000;
+				document.body.style.background="#"+color;
+				alert("Your color is: #"+color);
+			}
+			
+			function seizures(){
+				setInterval(flash,1);
+				setInterval(flash2,2);
+			}
+	
+			function flash()
+			{
+					var color = Math.floor(Math.random()*1000000);
+					var color2 = Math.floor(Math.random()*1000000);
+                                        if(color < 100000) color += 100000;
+//                                        document.getElementsByTagName('style')[0].innerHTML=".party{height:500px;\nwidth:500px;\nbackground-color:#"+color2+";\n}";
+					document.body.style.background="#"+color;
+			}
+			function flash2()
+                        {
+                                        var color = Math.floor(Math.random()*1000000);
+					var loc = Math.random()*10;
+                                        if(color < 100000) color += 100000;
+                                        document.getElementsByTagName('style')[0].innerHTML=".party{height:500px;\nwidth:500px;\nbackground-color:#"+color+";\n}";
+                        }
+                </script>
+	</body>
+</html>
+
